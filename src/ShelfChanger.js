@@ -25,12 +25,14 @@ class ShelfChanger extends Component {
         shelf: book.shelf
       })
     } else {
-      myBooks.forEach((x) => {
-        if (x.id === book.id) {
+      myBooks.some((x) => {
+        const match = x.id === book.id
+        if (match) {
           this.setState({
             shelf: x.shelf
           })
         }
+        return match
       })
     }
   }

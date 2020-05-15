@@ -46,8 +46,7 @@ class SearchBooks extends Component {
         })
     } else {
       this.setState({
-        searchedBooks: [],
-        myBooks: myBooks
+        searchedBooks: []
       })
     }
   }
