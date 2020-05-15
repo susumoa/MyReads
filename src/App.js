@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import { Route, BrowserRouter } from 'react-router-dom'
-import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from './api/BooksAPI'
 import './App.css'
-import BookList from './BookList'
-import SearchBooks from './SearchBooks'
+import BookList from './components/BookList'
+import SearchBooks from './components/SearchBooks'
 
 class BooksApp extends Component {
   state = {
@@ -39,6 +39,7 @@ class BooksApp extends Component {
           <Route exact path='/' render={() => (
             <BookList
               books={books}
+              myBooks={books}
               onShelfChange={this.handleShelfChange}
               />
           )}/>

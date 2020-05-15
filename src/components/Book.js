@@ -14,8 +14,9 @@ class Book extends Component {
   }
   
   render() {
-    const {imageLinks, shelf, title, authors} = this.props.book
-    const {onShelfChange, myBooks} = this.props
+    const {onShelfChange, myBooks, book} = this.props
+    const {imageLinks, shelf, title, authors} = book
+ 
 
     const onBookMove = (shelf) => {
       if (shelf !== undefined) {
@@ -29,7 +30,7 @@ class Book extends Component {
       <div className="book">
         <div className="book-top">
           <div className='book-cover' style={{width: 128, height: 193, backgroundImage: `url(${imageLinks !== undefined && imageLinks.thumbnail})`}}></div>
-          <ShelfChanger book={this.props.book} myBooks={myBooks} shelf={shelf} onShelfChange={onShelfChange} onBookMove={onBookMove}/>
+          <ShelfChanger book={book} myBooks={myBooks} shelf={shelf} onShelfChange={onShelfChange} onBookMove={onBookMove}/>
         </div>
         <div className="book-title">{title}</div>
         <div className="book-authors">{authors && authors.map((author) => <div key={author}>{author}</div>)}</div>
